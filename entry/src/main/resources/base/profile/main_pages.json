@@ -1,0 +1,7 @@
+{
+  "src": [
+    "pages/ToDoListPage",
+    "pages/DetailPage",
+    "pages/InsertPage"
+  ]
+}

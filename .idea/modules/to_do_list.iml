@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="EMPTY_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../.." />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="" scope="PROVIDED">
+      <library name="ArkTS-4.1.0" type="ArkUI">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../../../../../../../../01_SofewareHierachy/01_Programming/04_HwSdk/WinSDK/hmscore/4.1.0/ets/api" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="" scope="PROVIDED">
+      <library name="ArkTS-API 11" type="ArkUI">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../../../../../../../../01_SofewareHierachy/01_Programming/04_HwSdk/WinSDK/openharmony/11/ets/api" />
+          <root url="file://$MODULE_DIR$/../../../../../../../../../01_SofewareHierachy/01_Programming/04_HwSdk/WinSDK/openharmony/11/ets/component" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
