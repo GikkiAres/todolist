@@ -14,7 +14,6 @@
  */
 
 import CommonConstants from '../common/constant/CommonConstant';
-import ToDoItem from '../view/ToDoItem';
 import { getApp, localStorage } from '../viewmodel/app';
 import { TodoModel, TodoState } from '../model/Todo';
 import { NavigationBar } from '../components/NavigationBar';

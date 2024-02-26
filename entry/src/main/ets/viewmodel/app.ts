@@ -1,9 +1,12 @@
 import { TodoModel, TodoState } from '../model/Todo';
 
+//创建Model
 let appData:Record<string,Array<TodoModel>|TodoState> = {
   'todos':[],
   'stateFilter':TodoState.Todo,
 };
+
+//创建ViewModel-LocalStrorage
 export let localStorage: LocalStorage = new LocalStorage(appData);
 
 let app:App|null = null;

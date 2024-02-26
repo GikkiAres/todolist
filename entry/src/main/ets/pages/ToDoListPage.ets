@@ -14,10 +14,10 @@
  */
 
 import CommonConstants from '../common/constant/CommonConstant';
-import ToDoItem from '../view/ToDoItem';
 import { getApp, localStorage } from '../viewmodel/app';
 import { TodoModel, TodoState } from '../model/Todo';
 import router from '@ohos.router';
+import ToDoItem from '../components/ToDoItem';
 
 @Entry(localStorage)
 @Component
@@ -93,24 +93,27 @@ struct ToDoListPage {
     .margin({ right: 14 })
   }
 
+  @Builder FilterButton() {
+    Row() {
+      Button("Todo",{ type: ButtonType.Normal })
+        .goupStyle(this.filterState == TodoState.Todo)
+        .onClick(()=>{this.changeFilterState(TodoState.Todo)})
+      Button("Doing",{ type: ButtonType.Normal })
+        .goupStyle(this.filterState == TodoState.Doing)
+        .onClick(()=>{this.changeFilterState(TodoState.Doing)})
+      Button("Done",{ type: ButtonType.Normal })
+        .goupStyle(this.filterState == TodoState.Finished)
+        .onClick(()=>{this.changeFilterState(TodoState.Finished)})
+    }
+    .width(500)
+    .margin({top:30})
+    .justifyContent(FlexAlign.SpaceBetween)
+  }
+
   build() {
     Stack() {
       Column({ space: CommonConstants.COLUMN_SPACE }) {
-        Row() {
-          Button("Todo",{ type: ButtonType.Normal })
-            .goupStyle(this.filterState == TodoState.Todo)
-            .onClick(()=>{this.changeFilterState(TodoState.Todo)})
-          Button("Doing",{ type: ButtonType.Normal })
-            .goupStyle(this.filterState == TodoState.Doing)
-            .onClick(()=>{this.changeFilterState(TodoState.Doing)})
-          Button("Done",{ type: ButtonType.Normal })
-            .goupStyle(this.filterState == TodoState.Finished)
-            .onClick(()=>{this.changeFilterState(TodoState.Finished)})
-        }
-        .width(500)
-        .margin({top:30})
-        .justifyContent(FlexAlign.SpaceBetween)
-
+        this.FilterButton()
 
         List() {
           ForEach(this.filteredTodos, (item: TodoModel, index: number) => {
@@ -152,6 +155,8 @@ struct ToDoListPage {
     todo.state = state;
     this.updateList();
   }
+
+  //更新filterTodos
   updateList() {
     let todos = getApp().getAllTodo();
     this.filteredTodos = todos.filter((item)=>(item.state == this.filterState));

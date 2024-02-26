@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-import ToDoItem from '../view/ToDoItem';
 import { getApp, localStorage } from '../viewmodel/app';
 import { TodoModel, TodoState } from '../model/Todo';
 import { NavigationBar } from '../components/NavigationBar';
@@ -22,7 +21,6 @@ import router from '@ohos.router';
 @Entry
 @Component
 struct InsertPage {
-  @LocalStorageLink("todo") todos: Array<TodoModel> = [];
   @State title: string = "";
   @State detail: string = "";
 
